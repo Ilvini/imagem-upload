@@ -1,10 +1,10 @@
 <?php
 
-namespace IlviniPitter\ImagemUpload\Http\Controllers;
+namespace Pitter\ImagemUpload\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use IlviniPitter\ImagemUpload\ImagemUpload;
+use Pitter\ImagemUpload\ImagemUpload;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Intervention\Image\ImageManagerStatic as Image;

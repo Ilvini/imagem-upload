@@ -1,6 +1,6 @@
 <?php
 
-namespace IlviniPitter\ImagemUpload\Providers;
+namespace Pitter\ImagemUpload\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
@@ -96,9 +96,9 @@ class ImagemUploadServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
-            app(Factory::class)->load(__DIR__ . '/../database/factories');
-        }
+        // if (! app()->environment('production')) {
+        //     app(Factory::class)->load(__DIR__ . '/../database/factories');
+        // }
     }
 
     /**

@@ -1,14 +1,12 @@
 {
-    "name": "ImagemUpload",
-    "alias": "imagemupload",
-    "description": "",
-    "keywords": [],
-    "active": 1,
-    "order": 0,
-    "providers": [
-        "IlviniPitter\\ImagemUpload\\Providers\\ImagemUploadServiceProvider"
-    ],
-    "aliases": {},
-    "files": [],
-    "requires": []
+  "name": "ImagemUpload",
+  "alias": "imagemupload",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": ["Pitter\\ImagemUpload\\Providers\\ImagemUploadServiceProvider"],
+  "aliases": {},
+  "files": [],
+  "requires": []
 }

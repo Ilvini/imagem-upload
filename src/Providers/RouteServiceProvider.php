@@ -1,6 +1,6 @@
 <?php
 
-namespace IlviniPitter\ImagemUpload\Providers;
+namespace Pitter\ImagemUpload\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'IlviniPitter\ImagemUpload\Http\Controllers';
+    protected $namespace = 'Pitter\ImagemUpload\Http\Controllers';
 
     /**
      * Called before routes are registered.

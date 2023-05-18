@@ -1,6 +1,6 @@
 <?php
 
-namespace IlviniPitter\ImagemUpload\database\Seeders;
+namespace Pitter\ImagemUpload\database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
