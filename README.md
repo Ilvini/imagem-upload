@@ -22,7 +22,7 @@ requer Laravel 9 e PHP >= 8:
 Em require:
 
 ```json
-"ilvini-pitter/imagemupload": "9.x",
+"ilvini-pitter/imagem-upload": "9.x",
 ```
 
 Ao final do arquivo, adicione:

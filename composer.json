@@ -1,5 +1,5 @@
 {
-  "name": "ilvini-pitter/imagemupload",
+  "name": "ilvini-pitter/imagem-upload",
   "description": "Pacote de Upload de Imagens para Laravel 8",
   "license": "MIT",
   "autoload": {
