@@ -1,6 +1,6 @@
 <?php
 
-namespace Pitter\ImagemUpload\Providers;
+namespace IlviniPitter\ImagemUpload\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;

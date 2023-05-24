@@ -1,5 +1,5 @@
 <?php
-namespace Pitter\ImagemUpload;
+namespace IlviniPitter\ImagemUpload;
 
 use File;
 use Illuminate\Support\Str;

@@ -22,7 +22,7 @@ requer Laravel 9 e PHP >= 8:
 Em require:
 
 ```json
-"pitter/imagemupload": "9.x",
+"ilvini-pitter/imagemupload": "9.x",
 ```
 
 Ao final do arquivo, adicione:
@@ -31,7 +31,7 @@ Ao final do arquivo, adicione:
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/pitter/imagem-upload"
+        "url": "https://github.com/Ilvini/imagem-upload"
     }
 ]
 ```
@@ -59,7 +59,7 @@ em seu **Controller** coloque as configurações:
 
 ```php
 
-use Pitter\ImagemUpload\ImagemUpload;
+use IlviniPitter\ImagemUpload\ImagemUpload;
 
  public function __construct()
  {
@@ -137,7 +137,7 @@ em seu formulário html:
 em seu **Controller** coloque as configurações:
 
 ```php
-use Pitter\ImagemUpload\ImagemUpload;
+use IlviniPitter\ImagemUpload\ImagemUpload;
 
  public function __construct()
  {

@@ -1,10 +1,10 @@
 {
-  "name": "pitter/imagemupload",
+  "name": "ilvini-pitter/imagemupload",
   "description": "Pacote de Upload de Imagens para Laravel 8",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Pitter\\ImagemUpload\\": "src/"
+      "IlviniPitter\\ImagemUpload\\": "src/"
     }
   },
   "authors": [
@@ -16,7 +16,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Pitter\\ImagemUpload\\Providers\\ImagemUploadServiceProvider"
+        "IlviniPitter\\ImagemUpload\\Providers\\ImagemUploadServiceProvider"
       ],
       "aliases": {}
     }
