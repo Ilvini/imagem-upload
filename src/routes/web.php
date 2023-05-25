@@ -1,5 +1,7 @@
 <?php
 
+use IlviniPitter\ImagemUpload\Http\Controllers\ImagemUploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
