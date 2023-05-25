@@ -13,4 +13,4 @@ use IlviniPitter\ImagemUpload\Http\Controllers\ImagemUploadController;
 |
 */
 
-// Route::get('img-render/{path}/{tamanho?}/{imagem?}', [ImagemUploadController::class, 'imagemRender'])->name('imagem.render');
+Route::get('img-render/{path}/{tamanho?}/{imagem?}', [ImagemUploadController::class, 'imagemRender'])->name('imagem.render');
