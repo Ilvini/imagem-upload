@@ -1,6 +1,6 @@
 > Sua contribuição ajuda na manutenção do pacote e criação de muitos outros. Faça de coração ♥
 
-# Laravel Imagem Upload v9
+# Laravel Imagem Upload v10
 
 > Faça upload de imagens ainda mais facilmente no Laravel
 
@@ -15,14 +15,14 @@ O que ele fará por você:
 
 ## Instalação
 
-requer Laravel 9 e PHP >= 8:
+requer Laravel 10 e PHP >= 8.1:
 
 1 - Adicione as seguintes dependências ao composer.json do seu projeto:
 
 Em require:
 
 ```json
-"ilvini-pitter/imagem-upload": "9.x",
+"ilvini-pitter/imagem-upload": "10.x",
 ```
 
 Ao final do arquivo, adicione:

@@ -1,11 +1,11 @@
 <?php
 namespace IlviniPitter\ImagemUpload;
 
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Drivers\Gd\Driver as GBDriver;
+use Intervention\Image\ImageManager;
 
 class ImagemUpload {
 
@@ -24,7 +24,7 @@ class ImagemUpload {
 
         $array['destino'] = (isset($array['destino'])) ? $array['destino'] : false;
 
-        $array['preencher'] = (isset($array['preencher'])) ? $array['preencher'] : [];//@array Tamanhos que terão um fundo branco ex: ['p', 'g']
+        $array['preencher'] = (isset($array['preencher'])) ? $array['preencher'] : [];
 
         $array['resolucao'] = (isset($array['resolucao'])) ? $array['resolucao'] : false;
 
@@ -57,7 +57,6 @@ class ImagemUpload {
         return null;
     }
 
-    #se white true, insere fundo branco
     public static function enviaImagem($imagem, $array) {
 
         $source = $imagem->getRealPath();
@@ -78,11 +77,7 @@ class ImagemUpload {
             } else {
 
                 foreach ($array['resolucao'] as $pasta => $dimensoes) {
-                    // dd($dimensoes, is_array($pasta), $pasta);
                     $array['resolucao'] = ['pasta' => ((is_array($dimensoes)) ? $pasta : $dimensoes), 'dimensoes' => $dimensoes];
-                    // dd($array['resolucao']);
-                    // $array['resolucao'] = ['pasta' => $pasta, 'dimensoes' => $dimensoes];
-                    // dd($pasta, $dimensoes, $array['resolucao']);
                     ImagemUpload::moveImagem($array);
                 }
             }
@@ -99,8 +94,11 @@ class ImagemUpload {
     public static function moveImagem($array){
 
         try {
+
+            $imgManager = new ImageManager(GBDriver::class);
+
             if ($array['extensao'] != 'svg') {
-                $img = Image::make($array['source']);
+                $img = $imgManager->read($array['source']);
 
                 if (isset($array['crop'])) {
 
@@ -131,15 +129,13 @@ class ImagemUpload {
             $array['destino'] = config("imagemupload.destino.root")."/".$array['destino'];
 
             $caminho = str_replace('//', '/', $array['destino'].(isset($array['resolucao']['pasta']) ? "/" . $array['resolucao']['pasta']."/" : '').'/');
-            // $caminho = str_replace('//', '/', $caminho);
 
             if (!File::exists($caminho)) {
-                $result = File::makeDirectory($caminho, 0777, true);
+                File::makeDirectory($caminho, 0777, true);
                 if (config('imagemupload.generate_gitignore')) {
                     File::put($caminho . '.gitignore', '* !.gitignore');
                 }
             }
-
 
             if ($array['extensao'] != 'svg') {
                 $img->save($caminho . $array['novoNome'], config('imagemupload.qualidade'));
@@ -150,9 +146,7 @@ class ImagemUpload {
             return true;
 
         } catch (\Exception $e) {
-            dd($e);
             return false;
-
         }
 
     }
@@ -163,7 +157,7 @@ class ImagemUpload {
         $resolucao          = (isset($array['resolucao'])) ? $array['resolucao'] : false;
         $array['destino']   = config("imagemupload.destino.root")."/".$array['destino'];
         $status             = [];
-        // $destino = str_replace('//', '/', $array['destino'].(isset($array['resolucao']['pasta']) ? "/" . $array['resolucao']['pasta']."/" : '').'/');
+
         if(is_array($resolucao)) {
             foreach ($resolucao as $pasta => $tamanho) {
                 if(is_array($resolucao[$pasta])){
